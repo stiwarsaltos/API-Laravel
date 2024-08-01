@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class customerController extends Controller
+class CustomerController extends Controller
 {
     public function index(){
         $customers = Customer::all();
@@ -23,7 +23,7 @@ class customerController extends Controller
            'identify'=>'required|string',
             'name'=>'required|string',
             'phone'=>'required|string',
-            'email'=>'required|email'
+            'email'=>'required|string'
         ]);
         $customer = Customer::create($request->all());
         return response()->json($customer, 201);
@@ -35,7 +35,7 @@ class customerController extends Controller
                 'identify'=>'sometimes|string',
                 'name'=>'sometimes|string',
                 'phone'=>'sometimes|string',
-                'email'=>'sometimes|email',
+                'email'=>'sometimes|string',
             ]);
             $customer->update($request->all());
             return response()->json($customer, 200);

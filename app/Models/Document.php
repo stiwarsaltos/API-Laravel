@@ -8,7 +8,7 @@ class Document extends Model
     protected $connection = 'mongodb';
     protected $collection = 'documents';
     protected $fillable = [
-        'date', 'number', 'client', 'products', 'total'
+        'date', 'num', 'client', 'quantityProducts', 'total'
     ];
 
     protected $casts = [
