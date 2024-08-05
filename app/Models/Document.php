@@ -3,15 +3,16 @@
 namespace App\Models;
 
 use MongoDB\Laravel\Eloquent\Model;
+
 class Document extends Model
 {
     protected $connection = 'mongodb';
     protected $collection = 'documents';
     protected $fillable = [
-        'date', 'num', 'client', 'quantityProducts', 'total'
+        'date', 'num', 'client', 'quantityProducts', 'total', 'products'
     ];
 
     protected $casts = [
-        'products' => 'array',
+        'date' => 'date',
     ];
 }

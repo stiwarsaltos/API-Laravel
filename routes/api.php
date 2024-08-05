@@ -14,6 +14,7 @@ Route::delete('customers/{id}', [CustomerController::class, 'destroy']);
 //Rutas Document
 Route::get('documents',[DocumentController::class, 'index']);
 Route::get('documents/{id}', [DocumentController::class, 'show']);
+Route::get('documentsf', [DocumentController::class, 'filter']);
 Route::post('documents', [DocumentController::class, 'store']);
 Route::put('documents/{id}', [DocumentController::class, 'update']);
 Route::delete('documents/{id}', [DocumentController::class, 'destroy']);

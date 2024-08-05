@@ -25,7 +25,13 @@ class CustomerController extends Controller
             'phone'=>'required|string',
             'email'=>'required|string'
         ]);
-        $customer = Customer::create($request->all());
+        $customer = new Customer();
+        $customer->identify = $request->input('identify');
+        $customer->name = $request->input('name');
+        $customer->phone = $request->input('phone');
+        $customer->email = $request->input('email');
+
+        $customer->save();
         return response()->json($customer, 201);
     }
     public function update(Request $request, $id){
